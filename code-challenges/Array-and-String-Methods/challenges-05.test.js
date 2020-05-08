@@ -202,20 +202,14 @@ For example, removeVowels('gregor') returns 'grgr'.
 
 const removeVowels = (str) => {
     // Solution code here...
-    // let remove = /[aeiou]/g;
-    // let strArray = str.split("");
-    // strArray.forEach((arr) => {
-    //     if ((strArray.indexOf(str) = remove)) {
-    //         let answer = strArray.splice(0, remove);
-    //         return answer.join('');
-    //     }
-    // });
+    let remove = /[AEIOUaeiou]/g;
+    return str.replace(remove, '');
 };
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 10 - Stretch Goal
 
-Write a function named extractVowels that takes in a string and returns an array where the first element is the original string with all the vowels removed, and the second element is a string of all the vowels that were removed, in alphabetical order.
+// Write a function named extractVowels that takes in a string and returns an array where the first element is the original string with all the vowels removed, and the second element is a string of all the vowels that were removed, in alphabetical order.
 
 For example, extractVowels('gregor') returns ['grgr', 'eo'].
 
@@ -224,6 +218,12 @@ Similarly, extractVowels('The quick brown fox') returns ['Th qck brwn fx', 'eioo
 
 const extractVowels = (str) => {
     // Solution code here...
+    let newArr = [],
+        remove = /[AEIOUaeiou]/g;
+    let str2 = str.match(remove)
+    let str3 = str2.join('')
+    newArr.push(str.replace(remove, ''), str3)
+    return newArr
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -384,7 +384,7 @@ describe("Testing challenge 10", () => {
 
         expect(extractVowels("The quick brown fox")).toStrictEqual([
             "Th qck brwn fx",
-            "eioou",
+            "euioo",
         ]);
     });
 });
