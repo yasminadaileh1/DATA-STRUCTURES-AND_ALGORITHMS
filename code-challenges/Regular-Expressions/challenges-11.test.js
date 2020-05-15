@@ -13,16 +13,11 @@ Note the space in between first and last names.
 const toLastNames = (people) => {
     // Solution code here
     let names = [];
-    people.map((elements) => {
-        // console.log(elements);
-        let peopleArr = Object.values(elements);
-        console.log(peopleArr);
-
-        // let firstName = peopleArr[0];
-        // let lastName = peopleArr[1];
-        // names.push(firstName, " ", lastName);
-    });
-    console.log(names.join(""));
+    people.map(person => {
+        names.push(`${person.firstName} ${person.lastName}`)
+    })
+    console.log(names)
+    return names
 };
 
 /* ------------------------------------------------------------------------------------------------
